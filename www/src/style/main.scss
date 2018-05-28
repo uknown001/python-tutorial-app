@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "kamran";
+    src: url('B Kamran Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "iransans";
+    src: url('IRANSansWeb.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "bowlby";
+    font-style: normal;
+    font-weight: 400;
+    src: url('Bowlby.woff2') format('woff2');
+}
+
 $background-color: #4584b6;
 $text-color: #ffde57;
 
@@ -5,14 +22,44 @@ $text-color: #ffde57;
     width: 100%; height: 100%;
     overflow-x: hidden;
 }
+%transition {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+@mixin txtshdw($blur) {
+    -webkit-text-shadow: 0 0 $blur black;
+    text-shadow: 0 0 $blur black;
+}
 
 html, body {
     @extend %setPage;
     background-color: $background-color;
+    color: $text-color;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .startPage {
     @extend %setPage;
+    @include txtshdw(4px);
+    font-family: 'iransans';
+    h1 {
+        font: normal 40px 'bowlby';
+    }
     img {
         width: 70%;
+    }
+    .startPageButton {
+        width: 200px;
+        height: 30px;
+        background-color: rgba(30, 30, 150, .4);
+        padding-top: 2px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        @extend %transition;
+        &:active {
+            width: 100%;
+        }
     }
 }
