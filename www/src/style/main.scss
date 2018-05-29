@@ -30,7 +30,7 @@ $text-color: #ffde57;
     -webkit-text-shadow: 0 0 $blur black;
     text-shadow: 0 0 $blur black;
 }
-
+.hidden { display: none; }
 html, body {
     @extend %setPage;
     background-color: $background-color;
@@ -40,26 +40,40 @@ html, body {
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
 }
-.startPage {
+.page {
     @extend %setPage;
+}
+.startPage {
     @include txtshdw(4px);
     font-family: 'iransans';
-    h1 {
+    .title {
         font: normal 40px 'bowlby';
     }
     img {
         width: 70%;
     }
-    .startPageButton {
-        width: 200px;
-        height: 30px;
-        background-color: rgba(30, 30, 150, .4);
-        padding-top: 2px;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        @extend %transition;
-        &:active {
-            width: 100%;
+}
+.aboutAppPage {
+    font-family: 'iransans';
+    @include txtshdw(3px);
+    p {
+        margin-top: 40%;
+        background-color: rgba(0, 0, 0, .3);
+        span {
+            color: white;
         }
+    }
+}
+.Button {
+    width: 200px;
+    height: 30px;
+    background-color: rgba(30, 30, 150, .4);
+    padding-top: 2px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-family: 'iransans';
+    @extend %transition;
+    &:active {
+        width: 100%;
     }
 }

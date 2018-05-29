@@ -16,15 +16,19 @@
   src: url("Bowlby.woff2") format("woff2");
 }
 
-html, body, .startPage {
+html, body, .page {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
 }
 
-.startPage .startPageButton {
+.Button {
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+.hidden {
+  display: none;
 }
 
 html, body {
@@ -42,7 +46,7 @@ html, body {
   font-family: 'iransans';
 }
 
-.startPage h1 {
+.startPage .title {
   font: normal 40px 'bowlby';
 }
 
@@ -50,15 +54,31 @@ html, body {
   width: 70%;
 }
 
-.startPage .startPageButton {
+.aboutAppPage {
+  font-family: 'iransans';
+  -webkit-text-shadow: 0 0 3px black;
+  text-shadow: 0 0 3px black;
+}
+
+.aboutAppPage p {
+  margin-top: 40%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.aboutAppPage p span {
+  color: white;
+}
+
+.Button {
   width: 200px;
   height: 30px;
   background-color: rgba(30, 30, 150, 0.4);
   padding-top: 2px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  font-family: 'iransans';
 }
 
-.startPage .startPageButton:active {
+.Button:active {
   width: 100%;
 }
